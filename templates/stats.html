@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player Stats</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Player Stats</h1>
+    <ul>
+    {% for player, stats in stats.items() %}
+      <li>{{ player }}: {{ stats.profit | round(2) }} NIS in {{ stats.games_played }} games</li>
+    {% endfor %}
+    </ul>
+    <a href="/">Back to Games</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poker Games</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Poker Games</h1>
+    <a href="/new_game">Start New Game</a>
+    <ul>
+    {% for game in games.values() %}
+      <li>
+        <a href="/game/{{ game.id }}">{{ game.timestamp }}</a>
+        <form action="/delete_game/{{ game.id }}" method="post" style="display:inline" onsubmit="return confirm('Are you sure you want to delete this game?');">
+            <button type="submit" style="color: red;">Delete</button>
+        </form>
+      </li>
+    {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

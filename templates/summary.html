@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Game Summary</h1>
+    <ul>
+    {% for player, balance in balances.items() %}
+      <li>{{ player }}: {{ balance | round(2) }} NIS</li>
+    {% endfor %}
+    </ul>
+
+    <h2>Transactions</h2>
+    <ul>
+    {% for t in transactions %}
+      <li>{{ t }}</li>
+    {% endfor %}
+    </ul>
+
+    <a href="/">Back to Games</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Poker Game</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Manage Game: {{ game.id }}</h1>
+    <h2>Players</h2>
+    <ul>
+        {% for player, data in game.players.items() %}
+            <li>
+                <strong>{{ player }}</strong>: 
+                Hands = {{ data.hands }}, 
+                Balance = {{ data.balance }} NIS
+                <form action="" method="post" style="display:inline">
+                    <input type="hidden" name="player" value="{{ player }}">
+                    <button name="action" value="add_hand">+ Hand</button>
+                    <button name="action" value="remove_hand">- Hand</button>
+                </form>
+                <form action="" method="post" style="display:inline">
+                    <input type="hidden" name="player" value="{{ player }}">
+                    <input type="number" step="0.01" name="amount" placeholder="Amount">
+                    <button name="action" value="add_money">Add Money</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Total Balance Check</h3>
+    {% if total_balance != 0 %}
+        <p style="color: red; font-weight: bold;">⚠ Total balance is {{ total_balance }} NIS — should be 0!</p>
+    {% else %}
+        <p style="color: green; font-weight: bold;">✔ Total balance is 0 NIS.</p>
+    {% endif %}
+
+    <h3>Add New Player</h3>
+    <form action="" method="post">
+        <input type="text" name="new_player" placeholder="Player name" required>
+        <button name="action" value="add_player">Add Player</button>
+    </form>
+
+    <h2>History</h2>
+    <ul>
+        {% for event in game.history %}
+            <li>{{ event }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>
+        <a href="{{ url_for('game_summary', game_id=game.id) }}">View Summary</a>
+    </p>
+    <p>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </p>
+</body>
+</html>

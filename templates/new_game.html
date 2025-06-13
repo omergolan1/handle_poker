@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Poker Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>New Game</h1>
+    <form method="post">
+        <label>Enter player names (comma-separated):</label><br>
+        <input type="text" name="players" required>
+        <button type="submit">Create Game</button>
+    </form>
+</div>
+</body>
+</html>

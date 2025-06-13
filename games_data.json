@@ -1,0 +1,51 @@
+{
+    "3879671c-280f-4362-b9a4-9866b519be5a": {
+        "id": "3879671c-280f-4362-b9a4-9866b519be5a",
+        "timestamp": "2025-06-13 23:19:28",
+        "players": {
+            "omer": {
+                "balance": -20,
+                "hands": 2
+            },
+            "sean": {
+                "balance": 20,
+                "hands": 0
+            },
+            "ron": {
+                "balance": 0,
+                "hands": 1
+            }
+        },
+        "history": [
+            "omer added a hand (-20 NIS) -23:19:30",
+            "sean removed a hand (+20 NIS) -23:19:31",
+            "ron added a hand (-20 NIS) -23:19:32",
+            "ron removed a hand (+20 NIS) -23:19:32"
+        ]
+    },
+    "e55b34a7-756a-4afa-a80f-5e8c821afd41": {
+        "id": "e55b34a7-756a-4afa-a80f-5e8c821afd41",
+        "timestamp": "2025-06-13 23:21:08",
+        "players": {
+            "omer": {
+                "balance": 0,
+                "hands": 1
+            },
+            "sean": {
+                "balance": 0,
+                "hands": 1
+            },
+            "ron": {
+                "balance": -100,
+                "hands": 6
+            }
+        },
+        "history": [
+            "ron added a hand (-20 NIS) -23:23:54",
+            "ron added a hand (-20 NIS) -23:24:01",
+            "ron added a hand (-20 NIS) -23:24:31",
+            "ron added a hand (-20 NIS) -23:24:47",
+            "ron added a hand (-20 NIS) -23:24:50"
+        ]
+    }
+}
